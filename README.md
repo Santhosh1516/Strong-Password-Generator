@@ -1,0 +1,1 @@
+This is a simple Java-based password generator that creates random passwords of a specified length. The passwords include uppercase and lowercase letters, digits, and special characters, ensuring strong and secure passwords.
