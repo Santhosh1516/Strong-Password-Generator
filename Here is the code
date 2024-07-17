@@ -1,0 +1,27 @@
+import java.security.SecureRandom;
+import java.util.Scanner;
+
+public class Password{
+    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the desired password length: ");
+        int length = scanner.nextInt();
+
+        String password = generatePassword(length);
+        System.out.println("Generated Password: " + password);
+    }
+
+    private static String generatePassword(int length) {
+        SecureRandom random = new SecureRandom();
+        StringBuilder password = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(CHARACTERS.length());
+            password.append(CHARACTERS.charAt(index));
+        }
+
+        return password.toString();
+    }
+}
